@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "UserManagement_Web_API\\UserManagement_Web_API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\UserManagementProject_Blazor_Client\\Blazor_Client\\Blazor_Client.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

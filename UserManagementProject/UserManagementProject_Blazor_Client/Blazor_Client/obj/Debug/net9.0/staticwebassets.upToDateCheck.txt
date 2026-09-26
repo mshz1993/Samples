@@ -1,0 +1,5 @@
+wwwroot\css\app.css
+wwwroot\icon-192.png
+wwwroot\index.html
+C:\Users\Mehran\Desktop\Source\UserManagementProject\UserManagementProject_Blazor_Client\Blazor_Client\wwwroot\css\app.css
+C:\Users\Mehran\Desktop\Source\UserManagementProject\UserManagementProject_Blazor_Client\Blazor_Client\wwwroot\index.html

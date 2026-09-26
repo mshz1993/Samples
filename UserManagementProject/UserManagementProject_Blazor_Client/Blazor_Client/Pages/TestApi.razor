@@ -1,0 +1,27 @@
+﻿<h3>TestApi</h3>
+
+@page "/testapi"
+@inject HttpClient Http
+
+<h3>API Connection Test</h3>
+
+<button @onclick="GetData">Load Data</button>
+
+@if (items != null)
+{
+    <ul>
+        @foreach (var item in items)
+        {
+            <li>@item</li>
+        }
+    </ul>
+}
+
+@code {
+    List<string>? items;
+
+    async Task GetData()
+    {
+        items = await Http.GetFromJsonAsync<List<string>>("api/test");
+    }
+}

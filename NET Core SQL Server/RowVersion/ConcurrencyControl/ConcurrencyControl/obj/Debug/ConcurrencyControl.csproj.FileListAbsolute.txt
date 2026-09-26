@@ -1,0 +1,45 @@
+E:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe.config
+E:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe
+E:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.pdb
+E:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.frmConcurrencyControl.resources
+E:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.Properties.Resources.resources
+E:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csproj.GenerateResource.Cache
+E:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.exe
+E:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.pdb
+D:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\Concurrency\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe.config
+D:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\Concurrency\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.exe
+D:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\Concurrency\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.pdb
+D:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\Concurrency\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe
+D:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\Concurrency\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.pdb
+D:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\Concurrency\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csprojResolveAssemblyReference.cache
+D:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\Concurrency\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.FrmConcurrencyControl.resources
+D:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\Concurrency\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.Properties.Resources.resources
+D:\NikAmooz\دوره ها\SQLServerForDevelopers\Projects\Concurrency\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csproj.GenerateResource.Cache
+D:\NikAmooz\دوره ها\BI\Course\Session10\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe.config
+D:\NikAmooz\دوره ها\BI\Course\Session10\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.exe
+D:\NikAmooz\دوره ها\BI\Course\Session10\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.pdb
+D:\NikAmooz\دوره ها\BI\Course\Session10\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe
+D:\NikAmooz\دوره ها\BI\Course\Session10\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.pdb
+D:\NikAmooz\دوره ها\BI\Course\Session10\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csprojResolveAssemblyReference.cache
+D:\NikAmooz\دوره ها\BI\Course\Session10\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.FrmConcurrencyControl.resources
+D:\NikAmooz\دوره ها\BI\Course\Session10\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.Properties.Resources.resources
+D:\NikAmooz\دوره ها\BI\Course\Session10\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csproj.GenerateResource.Cache
+D:\NikAmooz\دوره ها\BI\Course_New\Session11\Scripts\04-TimeStamp\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe.config
+D:\NikAmooz\دوره ها\BI\Course_New\Session11\Scripts\04-TimeStamp\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.exe
+D:\NikAmooz\دوره ها\BI\Course_New\Session11\Scripts\04-TimeStamp\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.pdb
+D:\NikAmooz\دوره ها\BI\Course_New\Session11\Scripts\04-TimeStamp\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe
+D:\NikAmooz\دوره ها\BI\Course_New\Session11\Scripts\04-TimeStamp\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.pdb
+D:\NikAmooz\دوره ها\BI\Course_New\Session11\Scripts\04-TimeStamp\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csprojResolveAssemblyReference.cache
+D:\NikAmooz\دوره ها\BI\Course_New\Session11\Scripts\04-TimeStamp\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.FrmConcurrencyControl.resources
+D:\NikAmooz\دوره ها\BI\Course_New\Session11\Scripts\04-TimeStamp\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.Properties.Resources.resources
+D:\NikAmooz\دوره ها\BI\Course_New\Session11\Scripts\04-TimeStamp\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csproj.GenerateResource.Cache
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe.config
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.exe
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\bin\Debug\ConcurrencyControl.pdb
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csprojAssemblyReference.cache
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.FrmConcurrencyControl.resources
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.Properties.Resources.resources
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csproj.GenerateResource.cache
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.csproj.CoreCompileInputs.cache
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.exe
+D:\NikAmooz\دوره ها\NET Core\RowVersion\ConcurrencyControl\ConcurrencyControl\obj\Debug\ConcurrencyControl.pdb

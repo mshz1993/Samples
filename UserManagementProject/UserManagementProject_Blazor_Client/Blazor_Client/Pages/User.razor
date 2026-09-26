@@ -1,0 +1,128 @@
+﻿@page "/users"
+@inject HttpClient Http
+
+<h3>مدیریت کاربران</h3>
+
+@if (users == null)
+{
+    <p>در حال بارگذاری...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>کد</th>
+                <th>نام کامل</th>
+                <th>ایمیل</th>
+                <th>نقش</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var u in users)
+            {
+                <tr>
+                    <td>@u.Id</td>
+                    <td>@u.FullName</td>
+                    <td>@u.Email</td>
+                    <td>@u.Role</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" @onclick="() => EditUser(u)">ویرایش</button>
+                        <button class="btn btn-danger btn-sm ms-1" @onclick="() => DeleteUser(u.Id)">حذف</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4>@(editMode ? "ویرایش کاربر" : "افزودن کاربر جدید")</h4>
+    <div class="mb-3">
+        <input @bind="editUser.FullName" placeholder="نام کامل" class="form-control mb-1" />
+        <input @bind="editUser.Email" placeholder="ایمیل" class="form-control mb-1" />
+        <input @bind="editUser.Role" placeholder="نقش" class="form-control mb-1" />
+
+        @if (editMode)
+        {
+            <button class="btn btn-success" @onclick="UpdateUser">ذخیره تغییرات</button>
+            <button class="btn btn-secondary ms-1" @onclick="CancelEdit">انصراف</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" @onclick="AddUser">افزودن</button>
+        }
+    </div>
+}
+
+@code {
+    List<UserDto>? users;
+    UserDto editUser = new();
+    bool editMode = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        users = await Http.GetFromJsonAsync<List<UserDto>>("http://localhost:5000/api/users");
+    }
+
+    async Task AddUser()
+    {
+        var response = await Http.PostAsJsonAsync("http://localhost:5000/api/users", editUser);
+        if (response.IsSuccessStatusCode)
+        {
+            var added = await response.Content.ReadFromJsonAsync<UserDto>();
+            users?.Add(added!);
+            editUser = new UserDto();
+        }
+    }
+
+    async Task DeleteUser(int id)
+    {
+        var response = await Http.DeleteAsync($"http://localhost:5000/api/users/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            var userToRemove = users?.FirstOrDefault(u => u.Id == id);
+            if (userToRemove != null)
+                users?.Remove(userToRemove);
+        }
+    }
+
+    void EditUser(UserDto user)
+    {
+        editMode = true;
+        editUser = new UserDto
+            {
+                Id = user.Id,
+                FullName = user.FullName,
+                Email = user.Email,
+                Role = user.Role
+            };
+    }
+
+    async Task UpdateUser()
+    {
+        var response = await Http.PutAsJsonAsync($"http://localhost:5000/api/users/{editUser.Id}", editUser);
+        if (response.IsSuccessStatusCode)
+        {
+            var updated = await response.Content.ReadFromJsonAsync<UserDto>();
+            var index = users!.FindIndex(u => u.Id == editUser.Id);
+            if (index != -1)
+                users[index] = updated!;
+            editUser = new UserDto();
+            editMode = false;
+        }
+    }
+
+    void CancelEdit()
+    {
+        editMode = false;
+        editUser = new UserDto();
+    }
+
+    public class UserDto
+    {
+        public int Id { get; set; }
+        public string FullName { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Role { get; set; } = string.Empty;
+    }
+}

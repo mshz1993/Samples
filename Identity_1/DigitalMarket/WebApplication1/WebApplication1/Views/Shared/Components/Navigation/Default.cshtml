@@ -1,0 +1,20 @@
+﻿<ul>
+    @foreach (var item in TempData["MenuList"] as IEnumerable<WebApplication1.Models.HeaderMenu>)
+    {
+
+
+    <li style="display:inline!important">
+        @if (item.Id == 2062)
+        {<a href="https://localhost:44333/Identity/Account/@item.Link">@item.Title</a>}
+        else if (item.Id == 1060)
+        {<a href="https://localhost:44333/Identity/Account/@item.Link">@item.Title</a>}
+
+    else
+    {
+        <a href="/@item.ControlName/@item.Link">@item.Title</a>
+
+    }
+    </li>
+
+    }
+</ul>

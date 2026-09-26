@@ -1,0 +1,14 @@
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\bin\Debug\net9.0\Interpreter.exe
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\bin\Debug\net9.0\Interpreter.deps.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\bin\Debug\net9.0\Interpreter.runtimeconfig.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\bin\Debug\net9.0\Interpreter.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\bin\Debug\net9.0\Interpreter.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\obj\Debug\net9.0\Interpreter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\obj\Debug\net9.0\Interpreter.AssemblyInfoInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\obj\Debug\net9.0\Interpreter.AssemblyInfo.cs
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\obj\Debug\net9.0\Interpreter.csproj.CoreCompileInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\obj\Debug\net9.0\Interpreter.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\obj\Debug\net9.0\refint\Interpreter.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\obj\Debug\net9.0\Interpreter.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\obj\Debug\net9.0\Interpreter.genruntimeconfig.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Interpreter\obj\Debug\net9.0\ref\Interpreter.dll

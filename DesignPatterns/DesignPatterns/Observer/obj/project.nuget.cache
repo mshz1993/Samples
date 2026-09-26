@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "jGIxC0dLHiA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\State\\Observer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mehran\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.0\\microsoft.netcore.app.host.win-x64.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RaY6Rdw7ppI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\ChainOfResponsibility\\ChainOfResponsibility.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mehran\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512"
+  ],
+  "logs": []
+}

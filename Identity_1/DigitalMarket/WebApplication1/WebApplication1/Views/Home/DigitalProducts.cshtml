@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "محصولات دیجیتال";
+    Layout = "~/Views/Shared/Index_Layout.cshtml";
+
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            /*background-color: #2196F3;*/
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px 1px #afafaf;
+            margin: 10px;
+            padding: 20px;
+            /*font-size: 30px;*/
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container" dir="rtl">
+        @foreach (var item in Model)
+        {
+            <div class="grid-item" style="padding:10px">
+                <div style="text-align:center">
+                    <img src="~/images/DigitalPro/@item.ImageName" width="100px" height="170px">
+                    <div>
+                        <h3 style="padding:20px">@item.Title</h3>
+                        <h3 style="padding:10px"> @{string text = string.Format("{0:N0}", Convert.ToDecimal(item.Price)); } @text تومان</h3>
+                        <a class="boxed-btn4" style="margin-left:auto;" asp-controller="Orders" asp-action="Add" asp-route-number1=@item.ProductId asp-route-Mines=0>
+                            افزودن به سبد خرید
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

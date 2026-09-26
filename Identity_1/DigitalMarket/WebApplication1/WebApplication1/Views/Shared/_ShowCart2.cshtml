@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WebApplication1.Models.ViewModels.ShowCartViewModel>
+@{int Totalprice = 0;
+}
+<link rel="stylesheet" href="~/css/Cartstyle.css" media="screen" title="no title" charset="utf-8">
+<script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="shopping-cart" dir="rtl" style="text-align:center;height:max-content; box-shadow: 0 0 10px 1px #afafaf;font-family:IRANSansWeb(FaNum)">
+
+    <div class="title" style="font-size: x-large;">
+        سبد خرید
+    </div>
+
+    @if (Model.Any())
+    {
+
+        @foreach (var item in Model)
+        {
+
+            <div class="item" style="border-top: 1px solid #E1E8EE;border-bottom: 1px solid #E1E8EE;">
+                <div class="image">
+                    <img src="~/images/DigitalPro/@item.ImageName" class="thumbnail" width="120px" height="80px" />
+                </div>
+                <div class="description">
+                    <span style="font-size: initial;font-weight: 400; width:150px">@item.Title <span class="badge" style="font-size: initial;font-weight: 400">تعداد: @item.Count</span></span>
+
+                </div>
+                <div class="quantity">
+                    <a class="material-icons" style="text-decoration: blink;font-size: 20px;color: #e442e6;" asp-controller="Orders" asp-action="Add" asp-route-number1=@item.ProdectId asp-route-Mines=0>
+                        &#xe3ba;
+                    </a>
+                    <input type="text" name="name" value="1" readonly="readonly">
+                    <a class="material-icons" style="text-decoration: blink;font-size: 20px;color: #e442e6;" asp-controller="Orders" asp-action="Add" asp-route-number1=@item.ProdectId asp-route-Mines=1>
+                        &#xe15d;
+                    </a>
+                </div>
+                @*<div class="total-price"></div>*@
+                <div class="buttons" style="margin-top: -8px">
+                    <a class="material-icons" style="text-decoration: blink;font-size: 20px;color: #e442e6;" asp-controller="Orders" asp-action="Delete" asp-route-id=@item.ProdectId>
+                        &#xe14c;
+                    </a>
+                </div>
+
+                <div class="buttons" style="margin-top: -8px">
+                    @{string SumPrice = (Convert.ToInt32(item.Price) * Convert.ToInt32(item.Count)).ToString();}
+                    @{string text = string.Format("{0:N0}", Convert.ToDecimal(SumPrice)); }
+                    <span class="badge" style="font-size: initial;color:#86939E; font-weight: 400;">قیمت: @text </span>
+                </div>
+
+
+            </div>
+            Totalprice = Totalprice + Convert.ToInt32(item.Price) * Convert.ToInt32(item.Count);
+
+        }
+    }
+    else
+    {
+        <p> سبد خرید خالی است </p>
+    }
+    @if (Model.Any())
+    {
+        <div style="font-size: initial;color:#86939E; font-weight: 400;padding-top:15px">
+            @{string text = string.Format("{0:N0}", Convert.ToDecimal(Totalprice)); }
+            مبلغ قابل پرداخت:  @text تومان
+        </div>
+        <div style="margin-top:50px;margin-bottom: 50px;">
+            <a asp-action="FinalCart" asp-controller="Home" style="text-decoration: blink;font-size: 20px;margin-left:auto " class="boxed-btn4">
+                ادامه فرآیند خرید
+            </a>
+        </div>
+
+
+
+
+    }
+</div>
+
+

@@ -1,0 +1,16 @@
+C:\Users\Mehran\Desktop\Source\EFSample\EFSample\obj\Debug\net6.0\EFSample.csproj.AssemblyReference.cache
+C:\Users\Mehran\Desktop\Source\EFSample\EFSample\obj\Debug\net6.0\EFSample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehran\Desktop\Source\EFSample\EFSample\obj\Debug\net6.0\EFSample.AssemblyInfoInputs.cache
+C:\Users\Mehran\Desktop\Source\EFSample\EFSample\obj\Debug\net6.0\EFSample.AssemblyInfo.cs
+C:\Users\Mehran\Desktop\Source\EFSample\EFSample\obj\Debug\net6.0\EFSample.csproj.CoreCompileInputs.cache
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\bin\Debug\net6.0\EFSample.deps.json
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\bin\Debug\net6.0\EFSample.dll
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\bin\Debug\net6.0\EFSample.pdb
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\obj\Debug\net6.0\EFSample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\obj\Debug\net6.0\EFSample.AssemblyInfoInputs.cache
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\obj\Debug\net6.0\EFSample.AssemblyInfo.cs
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\obj\Debug\net6.0\EFSample.csproj.CoreCompileInputs.cache
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\obj\Debug\net6.0\EFSample.dll
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\obj\Debug\net6.0\refint\EFSample.dll
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\obj\Debug\net6.0\EFSample.pdb
+C:\Users\Mehran\Desktop\Source\EFQuerySample\EFSample\obj\Debug\net6.0\ref\EFSample.dll

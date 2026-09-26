@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mehran\\Desktop\\Source\\EFQuerySample\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6B69DBC2-7DA0-4A83-89DA-5E2ACA8273A5}|EFQuerySample\\EFQuerySample_UI.csproj|c:\\users\\mehran\\desktop\\source\\efquerysample\\efquerysample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B69DBC2-7DA0-4A83-89DA-5E2ACA8273A5}|EFQuerySample\\EFQuerySample_UI.csproj|solutionrelative:efquerysample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E2CCB02-08C2-49A9-B91C-FD4477A4A71A}|EFSample\\EFSample.csproj|c:\\users\\mehran\\desktop\\source\\efquerysample\\efsample\\efsample.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4E2CCB02-08C2-49A9-B91C-FD4477A4A71A}|EFSample\\EFSample.csproj|solutionrelative:efsample\\efsample.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E85D329B-4357-4C56-BF45-ACA6035DF162}|EfSample.DAL\\EfSample.DAL.csproj|c:\\users\\mehran\\desktop\\source\\efquerysample\\efsample.dal\\coursestorerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E85D329B-4357-4C56-BF45-ACA6035DF162}|EfSample.DAL\\EfSample.DAL.csproj|solutionrelative:efsample.dal\\coursestorerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EFSample",
+              "DocumentMoniker": "C:\\Users\\Mehran\\Desktop\\Source\\EFQuerySample\\EFSample\\EFSample.csproj",
+              "RelativeDocumentMoniker": "EFSample\\EFSample.csproj",
+              "ToolTip": "C:\\Users\\Mehran\\Desktop\\Source\\EFQuerySample\\EFSample\\EFSample.csproj",
+              "RelativeToolTip": "EFSample\\EFSample.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-24T16:13:21.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CourseStoreRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Mehran\\Desktop\\Source\\EFQuerySample\\EfSample.DAL\\CourseStoreRepository.cs",
+              "RelativeDocumentMoniker": "EfSample.DAL\\CourseStoreRepository.cs",
+              "ToolTip": "C:\\Users\\Mehran\\Desktop\\Source\\EFQuerySample\\EfSample.DAL\\CourseStoreRepository.cs",
+              "RelativeToolTip": "EfSample.DAL\\CourseStoreRepository.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAYwFQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T14:04:51.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mehran\\Desktop\\Source\\EFQuerySample\\EFQuerySample\\Program.cs",
+              "RelativeDocumentMoniker": "EFQuerySample\\Program.cs",
+              "ToolTip": "C:\\Users\\Mehran\\Desktop\\Source\\EFQuerySample\\EFQuerySample\\Program.cs",
+              "RelativeToolTip": "EFQuerySample\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAgwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T14:03:28.277Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

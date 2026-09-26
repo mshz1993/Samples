@@ -1,0 +1,14 @@
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\bin\Debug\net9.0\Memento.exe
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\bin\Debug\net9.0\Memento.deps.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\bin\Debug\net9.0\Memento.runtimeconfig.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\bin\Debug\net9.0\Memento.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\bin\Debug\net9.0\Memento.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\obj\Debug\net9.0\Memento.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\obj\Debug\net9.0\Memento.AssemblyInfoInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\obj\Debug\net9.0\Memento.AssemblyInfo.cs
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\obj\Debug\net9.0\Memento.csproj.CoreCompileInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\obj\Debug\net9.0\Memento.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\obj\Debug\net9.0\refint\Memento.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\obj\Debug\net9.0\Memento.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\obj\Debug\net9.0\Memento.genruntimeconfig.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Memento\obj\Debug\net9.0\ref\Memento.dll

@@ -1,0 +1,263 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.png">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/gijgo.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" href="~/css/slick.css">
+    <link rel="stylesheet" href="~/css/slicknav.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="~/Identity/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+    <script>
+        function showdiv() {
+            document.getElementById("MeSS").style.visibility = "hidden";
+        }
+        setTimeout("showdiv()", 7000);
+    </script>
+
+    <style>
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 300px;
+            margin-right: -90px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+            .dropdown-content:hover {
+                color: lightslategray !important;
+            }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .showcart:hover {
+            color: #f6127d !important;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+
+
+                                    <img src="~/images/logo.png" alt="">
+
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="main-menu  d-none d-lg-block" style="text-align:center">
+                                    @await Component.InvokeAsync("Navigation")
+                                </div>
+                            </div>
+                            <div style="margin-right:300px">
+                                <div class="social_wrap d-flex align-items-center justify-content-end">
+
+                                    <div class="social_links d-none d-xl-block">
+                                        <ul>
+                                            <li>
+                                                @*<a class="showcart" style="color:#AAB1B7">*@
+                                                <div class="dropdown" style="text-align:center">
+                                                    <i class="fa fa-google" style="color:#AAB1B7"></i>
+                                                    <div class="dropdown-content" style="overflow: auto;max-height:400px">
+                                                        @await Component.InvokeAsync("CookieCartComponent2")
+                                                    </div>
+                                                </div>
+                                                @*</a>*@
+                                            </li>
+                                            <li><a href="https://www.instagram.com/shahidi.mehran"> <i class="fa fa-instagram"></i> </a></li>
+                                            <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
+                                            <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="seach_icon">
+                                <a href="/Home/Index">
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- header-end -->
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="where_togo_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+
+                </div>
+                <div class="col-lg-9">
+                    <div class="search_wrap">
+                        <form class="search_form" action="#">
+                            <div class="input_field">
+                                <input type="text" placeholder="جست و جو کن">
+                            </div>
+                            <div class="search_btn">
+                                <button class="boxed-btn4 " type="button">جست و جو</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="MeSS" style="width: 100%; background-color: aqua; color:#807e7e;text-align: center; font-weight:500">
+        @TempData["Message"]
+        @TempData["Error"]
+    </div>
+
+
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4 ">
+                        <div class="footer_widget" style="text-align:center">
+                            <h3 class="footer_title">اطلاعات تماس</h3>
+                            <p>
+
+                                جلالیه- 18 متری آیان 10 متری هشتم
+
+                            </p>
+                            <p>
+
+                                0413-4416583
+
+                            </p>
+                            <a href="#" style="color:#AAB1B7">Shahidi_Mehran@Yahoo.com</a>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/shahidi.mehran">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-md-6 col-lg-4">
+                        <h3 style="color:white!important;font-size:20px;text-align:right">مختصری درباره دیجیتال مارکت</h3>
+
+                        <p style="direction:rtl; line-height:2;text-align:justify">
+                            تولد مرورگرها آغازی بر طراحی وب بود، زیرا مرورگرها می‌توانستند تصاویر را برای مخاطب به نمایش درآورند. در آن زمان نزدیک‌ترین گزینه‌ی موجود برای ساختار اطلاعات جدول‌ها، کدهای HTML بود.
+                            همچنین زمانی که واژه Slicing Design محبوبیت پیدا کرد، طراحان المان‌ها و طرح‌های مختلفی را مانند یک پوستر یا بروشور طراحی می‌کردند و این برنامه‌نویسان بودند که می‌بایست تصاویر را به قطعات کوچک تبدیل کرده و بهترین راه را برای پیاده‌سازی و کدنویسی این المان‌ها پیدا کنند.
+                            از طرف دیگر جدول‌ها ویژگی‌های بسیار عالی و کاربردی داشتند که برنامه نویسان می‌توانستند با کمک آن‌ها تصاویر و متون را به صورت عمودی تراز کرده و نسبت این تراز را با واحد پیکسل یا نسبت‌های درصدی تعریف کنند.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            Digital Market
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | تمامی حقوق متعلق به این سایت برای  دیجیتال مارکت محفوظ  می باشد
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Modal -->
+    <di class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="serch_form">
+                    <input type="text" placeholder="Search">
+                    <button type="submit">search</button>
+                </div>
+            </div>
+        </div>
+    </di>
+
+</body>
+</html>

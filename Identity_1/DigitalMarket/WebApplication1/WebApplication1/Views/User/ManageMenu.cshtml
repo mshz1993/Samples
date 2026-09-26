@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebApplication1.Models.HeaderMenu>
+@{
+    ViewData["Title"] = "مدیریت منو ها";
+    Layout = "~/Views/Shared/UserAdmin_LayoutPage.cshtml";
+}
+
+
+<div style="margin-bottom:100px ;margin-left: 500px;">
+    <div style="padding:70px;text-align:center;box-shadow: 0 0 10px 1px #afafaf;direction:rtl;width:fit-content; border-radius:50px;margin-left: 00px;margin-top:100px">
+        <h2 style="text-align:center;padding-bottom:50px;color:red">مدیریت منو</h2>
+
+        <ul style="text-align:end">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <span style="color:blue">
+                        @item.Title
+                        <span style="padding-right:10px">
+                            @Html.ActionLink("افزودن عنوان ", "AddMenu", "User", new { id = item.Id }) |
+                            @Html.ActionLink("ویرایش", "EditHeaderMenu", "User", new { id = item.Id }) |
+                            @Html.ActionLink("حذف", "DeleteHeaderMenu", "User", new { id = item.Id })
+                        </span>
+                    </span>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

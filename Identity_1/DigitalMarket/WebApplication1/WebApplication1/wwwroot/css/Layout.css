@@ -1,0 +1,90 @@
+.main-sidebar2 {
+    bottom: 0;
+    float: none;
+    height: 100vh;
+    left: 0;
+    /*position: fixed;*/
+    top: 0;
+}
+
+:not(.layout-fixed) .main-sidebar2 {
+    height: inherit;
+    min-height: 100%;
+    /*position: absolute;*/
+    top: 0;
+    float: right;
+    background-color: #212529;
+}
+.text-valid
+{
+    padding-left:150px
+}
+.d-block2 {
+    color: #c2c7d0 !important;
+}
+
+.fontlayout {
+    font-family: 'IRANSansWeb(FaNum)','B Titr';
+}
+
+.d-block2:hover {
+    color: white !important;
+}
+
+.nav-link:hover {
+    background-color: #495057;
+    color: #e6e6e6 !important;
+}
+
+.nav-linkicon {
+    display: block;
+    padding: .5rem 1rem;
+    color: black !important;
+    padding-top: 15px;
+    height: 25px
+}
+    .nav-linkicon:hover {
+        color: #ff0078 !important;
+    }
+
+.menu-link:hover {
+    background-color: transparent;
+    color: #ff0078 !important;
+}
+
+.elevation-42 {
+    box-shadow: 0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22) !important;
+}
+
+.sidebar-dark2 {
+    background-color: #343a40;
+}
+
+.main-sidebar {
+    height: 100vh;
+    overflow-y: hidden;
+    z-index: 1038;
+}
+
+    .main-sidebar, .main-sidebar::before {
+        transition: margin-left .3s ease-in-out,width .3s ease-in-out;
+        width: 250px;
+    }
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+*::after, ::before {
+    box-sizing: border-box;
+}
+
+.nav-item.active {
+    background-color: white !important;
+    color: black !important;
+}
+
+.nav-link.active {
+    background-color: white !important;
+    color: black !important;
+}

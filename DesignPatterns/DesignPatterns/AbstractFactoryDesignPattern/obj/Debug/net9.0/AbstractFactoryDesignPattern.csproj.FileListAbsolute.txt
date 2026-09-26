@@ -1,0 +1,14 @@
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\bin\Debug\net9.0\AbstractFactoryDesignPattern.exe
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\bin\Debug\net9.0\AbstractFactoryDesignPattern.deps.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\bin\Debug\net9.0\AbstractFactoryDesignPattern.runtimeconfig.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\bin\Debug\net9.0\AbstractFactoryDesignPattern.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\bin\Debug\net9.0\AbstractFactoryDesignPattern.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\obj\Debug\net9.0\AbstractFactoryDesignPattern.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\obj\Debug\net9.0\AbstractFactoryDesignPattern.AssemblyInfoInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\obj\Debug\net9.0\AbstractFactoryDesignPattern.AssemblyInfo.cs
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\obj\Debug\net9.0\AbstractFactoryDesignPattern.csproj.CoreCompileInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\obj\Debug\net9.0\AbstractFactoryDesignPattern.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\obj\Debug\net9.0\refint\AbstractFactoryDesignPattern.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\obj\Debug\net9.0\AbstractFactoryDesignPattern.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\obj\Debug\net9.0\AbstractFactoryDesignPattern.genruntimeconfig.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\AbstractFactoryDesignPattern\obj\Debug\net9.0\ref\AbstractFactoryDesignPattern.dll

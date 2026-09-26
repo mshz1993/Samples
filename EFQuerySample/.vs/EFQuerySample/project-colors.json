@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6b69dbc2-7da0-4a83-89da-5e2aca8273a5": {
+      "ProjectGuid": "6b69dbc2-7da0-4a83-89da-5e2aca8273a5",
+      "DisplayName": "EFQuerySample_UI",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "4e2ccb02-08c2-49a9-b91c-fd4477a4a71a": {
+      "ProjectGuid": "4e2ccb02-08c2-49a9-b91c-fd4477a4a71a",
+      "DisplayName": "EFSample",
+      "ColorIndex": 1
+    },
+    "e85d329b-4357-4c56-bf45-aca6035df162": {
+      "ProjectGuid": "e85d329b-4357-4c56-bf45-aca6035df162",
+      "DisplayName": "EfSample.DAL",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

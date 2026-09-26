@@ -1,0 +1,42 @@
+﻿@model WebApplication1.Models.Product
+
+@{
+    ViewData["Title"] = "افزودن کالای دیجیتال";
+    Layout = "~/Views/Shared/UserAdmin_LayoutPage.cshtml";
+}
+
+<form asp-action="AddDigitalProduct" method="post" enctype="multipart/form-data">
+    <div style="margin-bottom:100px ;">
+        <div style="padding:70px;text-align:center;box-shadow: 0 0 10px 1px #afafaf;direction:rtl;width:fit-content; border-radius:50px;margin-left: 400px;margin-top:100px">
+            <h2 style="text-align:center;padding-bottom:50px;color:red">افزودن کالای دیجیتال</h2>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" type="number" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageName" class="control-label"></label>
+                <br />
+                <input class="form-control"  id="uploader1" placeholder="لطفا فایل عکس مورد نظر را انتخاب کنید" type="text" readonly="readonly" style="margin-left: 23px">
+                <br />
+                <input class="form-controlcallus" value="انتخاب فایل" accept="image/*" name="ImageName" id="file1" onchange="document.getElementById('uploader1').value = this.value;" type="file" style="padding-top:10px;padding-right:150px">
+                <span asp-validation-for="ImageName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="boxed-btn4" style="margin-left:0px;margin-top: 20px; width: 200px;" />
+            </div>
+        </div>
+    </div>
+
+</form>

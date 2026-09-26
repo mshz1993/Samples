@@ -1,0 +1,14 @@
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\bin\Debug\net9.0\Strategy.exe
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\bin\Debug\net9.0\Strategy.deps.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\bin\Debug\net9.0\Strategy.runtimeconfig.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\bin\Debug\net9.0\Strategy.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\bin\Debug\net9.0\Strategy.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\obj\Debug\net9.0\Strategy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\obj\Debug\net9.0\Strategy.AssemblyInfoInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\obj\Debug\net9.0\Strategy.AssemblyInfo.cs
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\obj\Debug\net9.0\Strategy.csproj.CoreCompileInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\obj\Debug\net9.0\Strategy.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\obj\Debug\net9.0\refint\Strategy.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\obj\Debug\net9.0\Strategy.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\obj\Debug\net9.0\Strategy.genruntimeconfig.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Strategy\obj\Debug\net9.0\ref\Strategy.dll

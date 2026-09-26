@@ -1,0 +1,40 @@
+﻿@model WebApplication1.Models.HeaderMenu
+
+@{
+    ViewData["Title"] = "افزودن منو";
+    Layout = "~/Views/Shared/UserAdmin_LayoutPage.cshtml";
+}
+
+
+<form asp-action="AddMenu" method="post">
+    <div style="margin-bottom:100px ;">
+        <div style="padding:70px;text-align:center;box-shadow: 0 0 10px 1px #afafaf;direction:rtl;width:fit-content; border-radius:50px;margin-left: 500px;margin-top:100px">
+            <h2 style="text-align:center;padding-bottom:50px;color:red">افزودن منو</h2>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Link" class="control-label"></label>
+                <input asp-for="Link" class="form-control" />
+                <span asp-validation-for="Link" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sort" class="control-label"></label>
+                <input asp-for="Sort" class="form-control" />
+                <span asp-validation-for="Sort" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت" class="boxed-btn4" style="margin-left:0px" />
+            </div>
+        </div>
+    </div>
+    
+</form>
+
+
+
+
+

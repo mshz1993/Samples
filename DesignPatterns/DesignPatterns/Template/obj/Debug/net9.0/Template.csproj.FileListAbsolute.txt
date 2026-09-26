@@ -1,0 +1,14 @@
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\bin\Debug\net9.0\Template.exe
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\bin\Debug\net9.0\Template.deps.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\bin\Debug\net9.0\Template.runtimeconfig.json
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\bin\Debug\net9.0\Template.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\bin\Debug\net9.0\Template.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\obj\Debug\net9.0\Template.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\obj\Debug\net9.0\Template.AssemblyInfoInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\obj\Debug\net9.0\Template.AssemblyInfo.cs
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\obj\Debug\net9.0\Template.csproj.CoreCompileInputs.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\obj\Debug\net9.0\Template.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\obj\Debug\net9.0\refint\Template.dll
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\obj\Debug\net9.0\Template.pdb
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\obj\Debug\net9.0\Template.genruntimeconfig.cache
+C:\Users\Mehran\Desktop\Source\DesignPatterns\DesignPatterns\Template\obj\Debug\net9.0\ref\Template.dll

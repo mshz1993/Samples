@@ -1,0 +1,32 @@
+﻿@model IEnumerable<WebApplication1.Models.Product>
+
+@{
+    ViewData["Title"] = "مدیریت کالای دیجیتال";
+    Layout = "~/Views/Shared/UserAdmin_LayoutPage.cshtml";
+}
+
+
+<div style="margin-bottom:100px ;margin-left: 400px;">
+    <div style="padding:70px;text-align:center;box-shadow: 0 0 10px 1px #afafaf;direction:rtl;width:fit-content; border-radius:50px;margin-left: 00px;margin-top:100px">
+        <h2 style="text-align:center;padding-bottom:50px;color:red">مدیریت کالای دیجیتال</h2>
+
+        <ul style="text-align:end">
+            @foreach (var item in Model)
+            {
+            <li style="padding:20px">
+                <img src="~/images/DigitalPro/@item.ImageName" width="100px" height="100px" />
+                <span>@item.Title</span>
+                @{string text = string.Format("{0:N0}", Convert.ToDecimal(item.Price)); }
+                <div style="display: inline-block;padding-right: 20px;"><span>@text</span></div>
+                <span style="color:blue;padding-right: 40px;">
+                    <span>
+                        @Html.ActionLink("ویرایش", "EditDigitalProduct", "User", new { id = item.ProductId }) |
+                        @Html.ActionLink("حذف", "DeleteDigitalProduct", "User", new { id = item.ProductId })
+                    </span>
+                </span>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
+}
