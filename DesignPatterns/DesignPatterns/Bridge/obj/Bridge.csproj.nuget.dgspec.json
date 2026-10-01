@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj": {}
+    "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj": {
+    "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj",
+        "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj",
         "projectName": "Bridge",
-        "projectPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj",
+        "projectPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj",
         "packagesPath": "C:\\Users\\Mehran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Bridge\\obj\\",
+        "outputPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Bridge\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

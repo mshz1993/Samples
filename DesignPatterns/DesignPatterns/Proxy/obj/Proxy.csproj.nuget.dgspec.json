@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Proxy\\Proxy.csproj": {}
+    "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Proxy\\Proxy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Proxy\\Proxy.csproj": {
+    "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Proxy\\Proxy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Proxy\\Proxy.csproj",
+        "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Proxy\\Proxy.csproj",
         "projectName": "Proxy",
-        "projectPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Proxy\\Proxy.csproj",
+        "projectPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Proxy\\Proxy.csproj",
         "packagesPath": "C:\\Users\\Mehran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Proxy\\obj\\",
+        "outputPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Proxy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

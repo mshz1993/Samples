@@ -1,77 +1,91 @@
-﻿public class Person
-{
-    public int Age;
-    public DateTime BirthDate;
-    public string Name;
-    public IdInfo IdInfo;
+﻿using System;
 
-    public Person ShallowCopy()
+public class Employee
+{
+    public string Name;
+    public Address Address;
+
+    // Shallow Copy
+    public Employee ShallowCopy()
     {
-        return (Person)this.MemberwiseClone();
+        return (Employee)this.MemberwiseClone();
     }
 
-    public Person DeepCopy()
+    // Deep Copy
+    public Employee DeepCopy()
     {
-        Person clone = (Person)this.MemberwiseClone();
-        clone.IdInfo = new IdInfo(IdInfo.IdNumber);
-        clone.Name = String.Copy(Name);
+        Employee clone = (Employee)this.MemberwiseClone();
+
+        clone.Address = new Address
+        {
+            City = this.Address.City
+        };
+
         return clone;
     }
 }
 
-public class IdInfo
+public class Address
 {
-    public int IdNumber;
-
-    public IdInfo(int idNumber)
-    {
-        this.IdNumber = idNumber;
-    }
+    public string City;
 }
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        Person p1 = new Person();
-        p1.Age = 42;
-        p1.BirthDate = Convert.ToDateTime("1977-01-01");
-        p1.Name = "Jack Daniels";
-        p1.IdInfo = new IdInfo(666);
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        // Employee اصلی
+//        Employee employee1 = new Employee
+//        {
+//            Name = "Ali",
+//            Address = new Address
+//            {
+//                City = "Tehran"
+//            }
+//        };
 
-        // Perform a shallow copy of p1 and assign it to p2.
-        Person p2 = p1.ShallowCopy();
-        // Make a deep copy of p1 and assign it to p3.
-        Person p3 = p1.DeepCopy();
+//        // Shallow Copy
+//        Employee employee2 = employee1.ShallowCopy();
 
-        // Display values of p1, p2 and p3.
-        Console.WriteLine("Original values of p1, p2, p3:");
-        Console.WriteLine("   p1 instance values: ");
-        DisplayValues(p1);
-        Console.WriteLine("   p2 instance values:");
-        DisplayValues(p2);
-        Console.WriteLine("   p3 instance values:");
-        DisplayValues(p3);
+//        // Deep Copy
+//        Employee employee3 = employee1.DeepCopy();
 
-        // Change the value of p1 properties and display the values of p1,
-        // p2 and p3.
-        p1.Age = 32;
-        p1.BirthDate = Convert.ToDateTime("1900-01-01");
-        p1.Name = "Frank";
-        p1.IdInfo.IdNumber = 7878;
-        Console.WriteLine("\nValues of p1, p2 and p3 after changes to p1:");
-        Console.WriteLine("   p1 instance values: ");
-        DisplayValues(p1);
-        Console.WriteLine("   p2 instance values (reference values have changed):");
-        DisplayValues(p2);
-        Console.WriteLine("   p3 instance values (everything was kept the same):");
-        DisplayValues(p3);
-    }
 
-    public static void DisplayValues(Person p)
-    {
-        Console.WriteLine("      Name: {0:s}, Age: {1:d}, BirthDate: {2:MM/dd/yy}",
-            p.Name, p.Age, p.BirthDate);
-        Console.WriteLine("      ID#: {0:d}", p.IdInfo.IdNumber);
-    }
-}
+//        Console.WriteLine("Before Changes:");
+//        Console.WriteLine("----------------");
+
+//        Console.WriteLine($"Employee 1: {employee1.Name} - {employee1.Address.City}");
+//        Console.WriteLine($"Employee 2: {employee2.Name} - {employee2.Address.City}");
+//        Console.WriteLine($"Employee 3: {employee3.Name} - {employee3.Address.City}");
+
+
+//        // تغییر Address در employee2
+//        employee2.Address.City = "Tabriz";
+
+//        // تغییر Address در employee3
+//        employee3.Address.City = "Shiraz";
+
+
+//        Console.WriteLine();
+//        Console.WriteLine("After Changes:");
+//        Console.WriteLine("----------------");
+
+//        Console.WriteLine($"Employee 1: {employee1.Name} - {employee1.Address.City}");
+//        Console.WriteLine($"Employee 2: {employee2.Name} - {employee2.Address.City}");
+//        Console.WriteLine($"Employee 3: {employee3.Name} - {employee3.Address.City}");
+
+
+//        // بررسی Reference
+//        Console.WriteLine();
+//        Console.WriteLine("Reference Comparison:");
+//        Console.WriteLine("----------------");
+
+//        Console.WriteLine(
+//            $"employee1.Address == employee2.Address : " +
+//            $"{employee1.Address == employee2.Address}");
+
+//        Console.WriteLine(
+//            $"employee1.Address == employee3.Address : " +
+//            $"{employee1.Address == employee3.Address}");
+//    }
+//}

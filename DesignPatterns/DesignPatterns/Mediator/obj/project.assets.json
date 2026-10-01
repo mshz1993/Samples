@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Mediator\\Mediator.csproj",
+      "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Mediator\\Mediator.csproj",
       "projectName": "Mediator",
-      "projectPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Mediator\\Mediator.csproj",
+      "projectPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Mediator\\Mediator.csproj",
       "packagesPath": "C:\\Users\\Mehran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Mediator\\obj\\",
+      "outputPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Mediator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

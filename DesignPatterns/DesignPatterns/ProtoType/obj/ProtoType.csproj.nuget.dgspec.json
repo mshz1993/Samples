@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj": {}
+    "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj": {
+    "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj",
+        "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj",
         "projectName": "ProtoType",
-        "projectPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj",
+        "projectPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj",
         "packagesPath": "C:\\Users\\Mehran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\ProtoType\\obj\\",
+        "outputPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\ProtoType\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

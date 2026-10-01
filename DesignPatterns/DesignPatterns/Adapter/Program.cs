@@ -1,46 +1,39 @@
 ﻿using System;
 
-// Target Interface
-public interface ILegacyService
+public interface IMessageSender
 {
-    void LegacyRequest();
+    void Send(string message);
 }
 
-// Adaptee
-public class NewService
+public class OldSmsService
 {
-    public void NewRequest()
+    public void SendSms(string text)
     {
-        Console.WriteLine("Executing NewService.NewRequest()");
+        Console.WriteLine($"SMS: {text}");
     }
 }
 
-// Adapter
-public class Adapter : ILegacyService
+public class SmsAdapter : IMessageSender
 {
-    private readonly NewService newService;
+    private readonly OldSmsService _smsService;
 
-    public Adapter(NewService newService)
+    public SmsAdapter()
     {
-        this.newService = newService;
+        _smsService = new OldSmsService();
     }
 
-    public void LegacyRequest()
+    public void Send(string message)
     {
-        newService.NewRequest();
+        _smsService.SendSms(message);
     }
 }
 
-// Client Code
-class Program
-{
-    static void Main()
-    {
-        // Using Adapter
-        NewService newService = new NewService();
-        ILegacyService legacyServiceAdapter = new Adapter(newService);
+//public class Program
+//{
+//    public static void Main()
+//    {
+//        IMessageSender sender = new SmsAdapter();
 
-        // Client invokes LegacyRequest without knowing about NewService
-        legacyServiceAdapter.LegacyRequest();
-    }
-}
+//        sender.Send("Hello");
+//    }
+//}

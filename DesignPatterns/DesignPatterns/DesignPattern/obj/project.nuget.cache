@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DWk8428n1r8=",
+  "dgSpecHash": "ldi7mLHcUa8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\DesignPattern\\FactoryDesignPattern.csproj",
+  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\DesignPattern\\FactoryDesignPattern.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mehran\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512"
   ],

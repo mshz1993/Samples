@@ -1,62 +1,103 @@
 ﻿using System;
 
-// Subsystem 1
-class Engine
+namespace Facade
 {
-    public void Start()
+    // ============================================
+    // Subsystem 1
+    // ============================================
+    public class Inventory
     {
-        Console.WriteLine("Engine started");
+        public bool CheckStock()
+        {
+            Console.WriteLine("Checking inventory...");
+
+            return true;
+        }
     }
 
-    public void Stop()
-    {
-        Console.WriteLine("Engine stopped");
-    }
-}
 
-// Subsystem 2
-class Lights
-{
-    public void TurnOn()
+    // ============================================
+    // Subsystem 2
+    // ============================================
+    public class Payment
     {
-        Console.WriteLine("Lights on");
-    }
+        public bool Pay()
+        {
+            Console.WriteLine("Processing payment...");
 
-    public void TurnOff()
-    {
-        Console.WriteLine("Lights off");
-    }
-}
-
-// Facade
-class Car
-{
-    private Engine engine = new Engine();
-    private Lights lights = new Lights();
-
-    public void StartCar()
-    {
-        engine.Start();
-        lights.TurnOn();
-        Console.WriteLine("Car is ready to drive");
+            return true;
+        }
     }
 
-    public void StopCar()
-    {
-        lights.TurnOff();
-        engine.Stop();
-        Console.WriteLine("Car has stopped");
-    }
-}
 
-class Program
-{
-    static void Main()
+    // ============================================
+    // Subsystem 3
+    // ============================================
+    public class Shipping
     {
-        // Using the Facade to start and stop the car
-        Car car = new Car();
-        car.StartCar();
-        // Simulate some driving
-        car.StopCar();
+        public void Ship()
+        {
+            Console.WriteLine("Shipping order...");
+        }
     }
+
+
+    // ============================================
+    // Facade
+    // ============================================
+    // Facade پیچیدگی چند سیستم مختلف را مخفی می‌کند
+    // و یک متد ساده در اختیار Client قرار می‌دهد.
+    public class OrderFacade
+    {
+        private readonly Inventory _inventory;
+        private readonly Payment _payment;
+        private readonly Shipping _shipping;
+
+        public OrderFacade()
+        {
+            _inventory = new Inventory();
+            _payment = new Payment();
+            _shipping = new Shipping();
+        }
+
+        public void PlaceOrder()
+        {
+            // مرحله اول: بررسی موجودی
+            if (!_inventory.CheckStock())
+            {
+                Console.WriteLine("Product is not available.");
+                return;
+            }
+
+            // مرحله دوم: پرداخت
+            if (!_payment.Pay())
+            {
+                Console.WriteLine("Payment failed.");
+                return;
+            }
+
+            // مرحله سوم: ارسال
+            _shipping.Ship();
+
+            Console.WriteLine("Order completed.");
+        }
+    }
+
+
+    // ============================================
+    // Client
+    // ============================================
+    //public class Program
+    //{
+    //    public static void Main()
+    //    {
+    //        // Client لازم نیست با Inventory،
+    //        // Payment و Shipping مستقیماً کار کند.
+
+    //        var orderFacade = new OrderFacade();
+
+    //        // فقط یک متد ساده را صدا می‌زنیم.
+    //        orderFacade.PlaceOrder();
+    //    }
+    //}
 }

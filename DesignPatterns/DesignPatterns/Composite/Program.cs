@@ -1,98 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
-// A common interface for all employees
-interface IEmployee
+public interface IFileSystemItem
 {
-    void ShowEmployeeDetails();
+    int GetSize();
 }
 
-class Developer : IEmployee
+// Leaf
+public class File : IFileSystemItem
 {
-    private long empId;
-    private string name;
-    private string position;
+    private readonly int size;
 
-    public Developer(long empId, string name, string position)
+    public File(int size)
     {
-        this.empId = empId;
-        this.name = name;
-        this.position = position;
+        this.size = size;
     }
 
-    public void ShowEmployeeDetails()
+    public int GetSize()
     {
-        Console.WriteLine($"{empId} {name} {position}");
+        return size;
     }
 }
 
-class Manager : IEmployee
+// Composite
+public class Folder : IFileSystemItem
 {
-    private long empId;
-    private string name;
-    private string position;
+    private readonly List<IFileSystemItem> items = new();
 
-    public Manager(long empId, string name, string position)
+    public void Add(IFileSystemItem item)
     {
-        this.empId = empId;
-        this.name = name;
-        this.position = position;
+        items.Add(item);
     }
 
-    public void ShowEmployeeDetails()
+    public int GetSize()
     {
-        Console.WriteLine($"{empId} {name} {position}");
+        return items.Sum(x => x.GetSize());
     }
 }
 
-// Class used to get Employee List 
-// and do the operations like 
-// add or remove Employee 
-class CompanyDirectory : IEmployee
-{
-    private List<IEmployee> employeeList = new List<IEmployee>();
+//class Program
+//{
+//    static void Main()
+//    {
+//        var file1 = new File(100);
+//        var file2 = new File(200);
+//        var file3 = new File(300);
 
-    public void ShowEmployeeDetails()
-    {
-        foreach (IEmployee emp in employeeList)
-        {
-            emp.ShowEmployeeDetails();
-        }
-    }
+//        var imagesFolder = new Folder();
+//        imagesFolder.Add(file2);
+//        imagesFolder.Add(file3);
 
-    public void AddEmployee(IEmployee emp)
-    {
-        employeeList.Add(emp);
-    }
+//        var documentsFolder = new Folder();
+//        documentsFolder.Add(file1);
+//        documentsFolder.Add(imagesFolder);
 
-    public void RemoveEmployee(IEmployee emp)
-    {
-        employeeList.Remove(emp);
-    }
-}
-
-// Driver class 
-class Company
-{
-    public static void Main(string[] args)
-    {
-        Developer dev1 = new Developer(100, "Lokesh Sharma", "Pro Developer");
-        Developer dev2 = new Developer(101, "Vinay Sharma", "Developer");
-
-        CompanyDirectory engDirectory = new CompanyDirectory();
-        engDirectory.AddEmployee(dev1);
-        engDirectory.AddEmployee(dev2);
-
-        Manager man1 = new Manager(200, "Kushagra Garg", "SEO Manager");
-        Manager man2 = new Manager(201, "Vikram Sharma", "Kushagra's Manager");
-
-        CompanyDirectory accDirectory = new CompanyDirectory();
-        accDirectory.AddEmployee(man1);
-        accDirectory.AddEmployee(man2);
-
-        CompanyDirectory directory = new CompanyDirectory();
-        directory.AddEmployee(engDirectory);
-        directory.AddEmployee(accDirectory);
-        directory.ShowEmployeeDetails();
-    }
-}
+//        Console.WriteLine(documentsFolder.GetSize());
+//    }
+//}

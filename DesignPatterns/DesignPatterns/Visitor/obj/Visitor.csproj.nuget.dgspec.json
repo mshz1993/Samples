@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Visitor\\Visitor.csproj": {}
+    "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Visitor\\Visitor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Visitor\\Visitor.csproj": {
+    "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Visitor\\Visitor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Visitor\\Visitor.csproj",
+        "projectUniqueName": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Visitor\\Visitor.csproj",
         "projectName": "Visitor",
-        "projectPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Visitor\\Visitor.csproj",
+        "projectPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Visitor\\Visitor.csproj",
         "packagesPath": "C:\\Users\\Mehran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Visitor\\obj\\",
+        "outputPath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Visitor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

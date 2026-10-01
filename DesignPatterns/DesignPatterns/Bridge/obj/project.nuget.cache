@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Aaz/BqvRJis=",
+  "dgSpecHash": "DdamvPX5vBg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj",
+  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Bridge\\Bridge.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mehran\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512"
   ],

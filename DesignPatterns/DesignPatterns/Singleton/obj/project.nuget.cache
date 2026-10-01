@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jbBwsZ1fWhs=",
+  "dgSpecHash": "0ZEm+B/OYl8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\Singleton\\Singleton.csproj",
+  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\Singleton\\Singleton.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mehran\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512"
   ],

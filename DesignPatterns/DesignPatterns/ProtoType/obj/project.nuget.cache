@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cagiqi8ZJxA=",
+  "dgSpecHash": "URA749qMQ9g=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Source\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj",
+  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Samples\\DesignPatterns\\DesignPatterns\\ProtoType\\ProtoType.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mehran\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512"
   ],

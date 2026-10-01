@@ -1,77 +1,64 @@
-﻿// Abstraction
-public abstract class Shape
-{
-    protected IRenderer renderer;
+﻿using System;
 
-    public Shape(IRenderer renderer)
-    {
-        this.renderer = renderer;
-    }
-    public abstract void Draw();
-}
-public class Circle : Shape
+public interface IDevice
 {
-    private float radius;
-    public Circle(IRenderer renderer, float radius) : base(renderer)
-    {
-        this.radius = radius;
-    }
-    public override void Draw()
-    {
-        renderer.RenderCircle(radius);
-    }
+    void TurnOn();
+    void TurnOff();
 }
-public class Square : Shape
+
+public class TV : IDevice
 {
-    private float side;
-    public Square(IRenderer renderer, float side) : base(renderer)
+    public void TurnOn()
     {
-        this.side = side;
+        Console.WriteLine("TV روشن شد");
     }
-    public override void Draw()
+
+    public void TurnOff()
     {
-        renderer.RenderSquare(side);
-    }
-}
-// Implementation
-public interface IRenderer
-{
-    void RenderCircle(float radius);
-    void RenderSquare(float side);
-}
-// Concrete Implementation
-public class VectorRenderer : IRenderer
-{
-    public void RenderCircle(float radius)
-    {
-        Console.WriteLine($"Drawing a circle of radius {radius} using vector graphics.");
-    }
-    public void RenderSquare(float side)
-    {
-        Console.WriteLine($"Drawing a square of side {side} using vector graphics.");
-    }
-}
-// Concrete Implementation
-public class RasterRenderer : IRenderer
-{
-    public void RenderCircle(float radius)
-    {
-        Console.WriteLine($"Drawing a circle of radius {radius} using raster graphics.");
-    }
-    public void RenderSquare(float side)
-    {
-        Console.WriteLine($"Drawing a square of side {side} using raster graphics.");
-    }
-}
-class MainClass
-{
-    static void Main(string[] args)
-    {
-        // Client code
-        var vectorCircle = new Circle(new VectorRenderer(), 5);
-        vectorCircle.Draw(); // Output: Drawing a circle of radius 5 using vector graphics.
-        var rasterSquare = new Square(new RasterRenderer(), 10);
-        rasterSquare.Draw(); // Output: Drawing a square of side 10 using raster graphics.
+        Console.WriteLine("TV خاموش شد");
     }
 }
 
+public abstract class RemoteControl
+{
+    protected IDevice _device;
+
+    protected RemoteControl(IDevice device)
+    {
+        _device = device;
+    }
+
+    public abstract void TurnOn();
+    public abstract void TurnOff();
+}
+
+public class BasicRemote : RemoteControl
+{
+    public BasicRemote(IDevice device)
+        : base(device)
+    {
+    }
+
+    public override void TurnOn()
+    {
+        _device.TurnOn();
+    }
+
+    public override void TurnOff()
+    {
+        _device.TurnOff();
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        IDevice tv = new TV();
+
+        RemoteControl remote = new BasicRemote(tv);
+
+        remote.TurnOn();
+        remote.TurnOff();
+    }
+}

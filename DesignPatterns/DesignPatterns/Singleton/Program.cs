@@ -1,20 +1,24 @@
 ﻿using System;
 
-public class Singleton
+public class Singleton_Class
 {
-    // static class
-    private static Singleton instance;
+    private static Singleton_Class instance;
+    private static readonly object lockObject = new object();
 
-    private Singleton()
+    private Singleton_Class()
     {
         Console.WriteLine("Singleton is Instantiated.");
     }
 
-    public static Singleton GetInstance()
+    public static Singleton_Class GetInstance()
     {
-        if (instance == null)
-            instance = new Singleton();
-        return instance;
+        lock (lockObject)//بیش از یک Thread نمیتواند همزمان وارد شود
+        {
+            if (instance == null)
+                instance = new Singleton_Class();
+
+            return instance;
+        }
     }
 
     public void DoSomething()
@@ -25,8 +29,8 @@ public class Singleton
 
 class Program
 {
-    static void Main(string[] args)
-    {
-        Singleton.GetInstance().DoSomething();
-    }
+    //static void Main(string[] args)
+    //{
+    //    Singleton_Class.GetInstance().DoSomething();
+    //}
 }
