@@ -1,0 +1,15 @@
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\bin\Debug\net9.0\Linq_Samples.exe
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\bin\Debug\net9.0\Linq_Samples.deps.json
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\bin\Debug\net9.0\Linq_Samples.runtimeconfig.json
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\bin\Debug\net9.0\Linq_Samples.dll
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\bin\Debug\net9.0\Linq_Samples.pdb
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\Linq_Samples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\Linq_Samples.AssemblyInfoInputs.cache
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\Linq_Samples.AssemblyInfo.cs
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\Linq_Samples.csproj.CoreCompileInputs.cache
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\Linq_Samples.sourcelink.json
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\Linq_Samples.dll
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\refint\Linq_Samples.dll
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\Linq_Samples.pdb
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\Linq_Samples.genruntimeconfig.cache
+C:\Users\Mehran\Desktop\Samples\Linq_Samples\Linq_Samples\obj\Debug\net9.0\ref\Linq_Samples.dll

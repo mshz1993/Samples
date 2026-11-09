@@ -1,69 +1,83 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 
-// Mediator Interface
-public interface IChatMediator
+namespace MediatorPatternExample
 {
-    void SendMessage(User sender, string message);
-}
-
-// Concrete Mediator
-public class ChatMediator : IChatMediator
-{
-    private List<User> users = new List<User>();
-
-    public void AddUser(User user)
+    // 1. قرارداد میانجی
+    public interface IChatMediator
     {
-        users.Add(user);
+        void SendMessage(string message, User sender);
+        void RegisterUser(User user);
     }
 
-    public void SendMessage(User sender, string message)
+    // 2. میانجی واقعی؛ مدیریت ارتباط کاربران
+    public class ChatRoom : IChatMediator
     {
-        foreach (var user in users)
+        private readonly List<User> _users = new List<User>();
+
+        public void RegisterUser(User user)
         {
-            // Send message to all users except the sender
-            if (user != sender)
-                user.ReceiveMessage(message);
+            _users.Add(user);
+        }
+
+        public void SendMessage(string message, User sender)
+        {
+            foreach (User user in _users)
+            {
+                // پیام برای فرستنده ارسال نمی‌شود
+                if (user != sender)
+                {
+                    user.ReceiveMessage(message, sender.Name);
+                }
+            }
         }
     }
-}
 
-// Colleague Class
-public class User
-{
-    private IChatMediator mediator;
-    public string Name { get; }
-
-    public User(IChatMediator mediator, string name)
+    // 3. کاربر
+    public class User
     {
-        this.mediator = mediator;
-        Name = name;
-        //mediator.AddUser(this);
+        private readonly IChatMediator _mediator;
+
+        public string Name { get; }
+
+        public User(string name, IChatMediator mediator)
+        {
+            Name = name;
+            _mediator = mediator;
+        }
+
+        public void SendMessage(string message)
+        {
+            Console.WriteLine($"{Name} sends: {message}");
+            _mediator.SendMessage(message, this);
+        }
+
+        public void ReceiveMessage(string message, string senderName)
+        {
+            Console.WriteLine(
+                $"{Name} received from {senderName}: {message}");
+        }
     }
 
-    public void SendMessage(string message)
+    // 4. اجرای برنامه
+    internal class Program
     {
-        Console.WriteLine($"{Name} sends: {message}");
-        mediator.SendMessage(this, message);
-    }
+        static void Main(string[] args)
+        {
+            IChatMediator chatRoom = new ChatRoom();
 
-    public void ReceiveMessage(string message)
-    {
-        Console.WriteLine($"{Name} receives: {message}");
-    }
-}
+            User ali = new User("Ali", chatRoom);
+            User sara = new User("Sara", chatRoom);
+            User reza = new User("Reza", chatRoom);
 
-// Client Code
-class Program
-{
-    static void Main()
-    {
-        IChatMediator mediator = new ChatMediator();
+            chatRoom.RegisterUser(ali);
+            chatRoom.RegisterUser(sara);
+            chatRoom.RegisterUser(reza);
 
-        User user1 = new User(mediator, "Alice");
-        User user2 = new User(mediator, "Bob");
-        User user3 = new User(mediator, "Charlie");
+            ali.SendMessage("Hello everyone!");
 
-        user1.SendMessage("Hello, everyone!");
+            Console.ReadKey();
+        }
     }
 }

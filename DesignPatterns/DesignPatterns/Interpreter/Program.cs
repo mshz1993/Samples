@@ -1,55 +1,89 @@
-﻿using System;
+﻿
+using System;
 
-// Abstract expression class
-abstract class Expression
+namespace InterpreterPatternExample
 {
-    public abstract int Interpret();
-}
-
-// Terminal expression class
-class NumberExpression : Expression
-{
-    private int number;
-
-    public NumberExpression(int number)
+    // 1. قرارداد مشترک تمام عبارت‌ها
+    public interface IExpression
     {
-        this.number = number;
+        bool Interpret(int value);
     }
 
-    public override int Interpret()
+    // 2. بررسی بزرگ‌تر بودن از یک عدد
+    public class GreaterThanExpression : IExpression
     {
-        return number;
-    }
-}
+        private readonly int _number;
 
-// Non-terminal expression class
-class AdditionExpression : Expression
-{
-    private Expression left;
-    private Expression right;
+        public GreaterThanExpression(int number)
+        {
+            _number = number;
+        }
 
-    public AdditionExpression(Expression left, Expression right)
-    {
-        this.left = left;
-        this.right = right;
+        public bool Interpret(int value)
+        {
+            return value > _number;
+        }
     }
 
-    public override int Interpret()
+    // 3. بررسی کوچک‌تر بودن از یک عدد
+    public class LessThanExpression : IExpression
     {
-        return left.Interpret() + right.Interpret();
+        private readonly int _number;
+
+        public LessThanExpression(int number)
+        {
+            _number = number;
+        }
+
+        public bool Interpret(int value)
+        {
+            return value < _number;
+        }
     }
-}
 
-// Client code
-class Program
-{
-    static void Main()
+    // 4. ترکیب دو شرط با AND
+    public class AndExpression : IExpression
     {
-        // Creating expressions: 1 + 2
-        Expression expression = new AdditionExpression(new NumberExpression(1), new NumberExpression(2));
+        private readonly IExpression _left;
+        private readonly IExpression _right;
 
-        // Interpreting and evaluating the expression
-        int result = expression.Interpret();
-        Console.WriteLine("Result: " + result); // Output: 3
+        public AndExpression(
+            IExpression left,
+            IExpression right)
+        {
+            _left = left;
+            _right = right;
+        }
+
+        public bool Interpret(int value)
+        {
+            return _left.Interpret(value)
+                && _right.Interpret(value);
+        }
+    }
+
+    // 5. اجرای برنامه
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // قانون: عدد بزرگ‌تر از 100 و کوچک‌تر از 1000 باشد
+            IExpression greaterThan100 =
+                new GreaterThanExpression(100);
+
+            IExpression lessThan1000 =
+                new LessThanExpression(1000);
+
+            IExpression rule =
+                new AndExpression(
+                    greaterThan100,
+                    lessThan1000);
+
+            Console.WriteLine(rule.Interpret(500));  // True
+            Console.WriteLine(rule.Interpret(1500)); // False
+            Console.WriteLine(rule.Interpret(50));   // False
+
+            Console.ReadKey();
+        }
     }
 }

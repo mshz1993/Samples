@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kfUF7E4YJbI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Samples\\Linq_Samples\\Linq_Samples\\Linq_Samples.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mehran\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512"
+  ],
+  "logs": []
+}

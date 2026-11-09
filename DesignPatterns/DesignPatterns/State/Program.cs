@@ -1,70 +1,86 @@
-﻿using System;
+﻿
+using System;
 
-// State interface
-public interface IState
+namespace StatePatternExample
 {
-    void Handle();
-}
-
-// Concrete States
-public class DraftState : IState
-{
-    public void Handle()
+    // 1. قرارداد وضعیت‌های سفارش
+    public interface IOrderState
     {
-        Console.WriteLine("Document is in Draft state. Editing is allowed.");
-    }
-}
-
-public class ReviewState : IState
-{
-    public void Handle()
-    {
-        Console.WriteLine("Document is in Review state. Editing is restricted. Reviewers can provide feedback.");
-    }
-}
-
-public class PublishedState : IState
-{
-    public void Handle()
-    {
-        Console.WriteLine("Document is in Published state. Editing is not allowed. It is publicly available.");
-    }
-}
-
-// Context
-public class Document
-{
-    private IState currentState;
-
-    public Document()
-    {
-        currentState = new DraftState(); // Initial state is Draft
+        void Process(Order order);
     }
 
-    public void ChangeState(IState newState)
+    // 2. وضعیت سفارش جدید
+    public class NewOrderState : IOrderState
     {
-        currentState = newState;
+        public void Process(Order order)
+        {
+            Console.WriteLine("Order is being processed.");
+
+            // پس از پردازش، وضعیت سفارش تغییر می‌کند
+            order.SetState(new ShippedOrderState());
+        }
     }
 
-    public void Request()
+    // 3. وضعیت سفارش ارسال‌شده
+    public class ShippedOrderState : IOrderState
     {
-        currentState.Handle();
+        public void Process(Order order)
+        {
+            Console.WriteLine("Order has already been shipped.");
+        }
     }
-}
 
-// Client Code
-class Program
-{
-    static void Main()
+    // 4. وضعیت سفارش لغوشده
+    public class CancelledOrderState : IOrderState
     {
-        Document document = new Document();
+        public void Process(Order order)
+        {
+            Console.WriteLine("Cancelled order cannot be processed.");
+        }
+    }
 
-        document.Request(); // Output: Document is in Draft state. Editing is allowed.
+    // 5. کلاس اصلی سفارش
+    public class Order
+    {
+        private IOrderState _state;
 
-        document.ChangeState(new ReviewState());
-        document.Request(); // Output: Document is in Review state. Editing is restricted. Reviewers can provide feedback.
+        public Order()
+        {
+            // وضعیت اولیه
+            _state = new NewOrderState();
+        }
 
-        document.ChangeState(new PublishedState());
-        document.Request(); // Output: Document is in Published state. Editing is not allowed. It is publicly available.
+        public void SetState(IOrderState state)
+        {
+            _state = state;
+        }
+
+        public void Process()
+        {
+            _state.Process(this);
+        }
+
+        public void Cancel()
+        {
+            SetState(new CancelledOrderState());
+        }
+    }
+
+    // 6. اجرای برنامه
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Order order = new Order();
+
+            order.Process();
+            order.Process();
+
+            Order cancelledOrder = new Order();
+            cancelledOrder.Cancel();
+            cancelledOrder.Process();
+
+            Console.ReadKey();
+        }
     }
 }

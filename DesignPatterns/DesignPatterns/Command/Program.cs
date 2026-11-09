@@ -1,147 +1,93 @@
-﻿using System;
+﻿
+using System;
 
-// Command interface
-interface ICommand
+namespace CommandPatternExample
 {
-    void Execute();
-}
-
-// Light class and its corresponding command classes
-class Light
-{
-    public void On()
+    // 1. قرارداد مشترک تمام فرمان‌ها
+    public interface ICommand
     {
-        Console.WriteLine("Light is on");
+        void Execute();
     }
 
-    public void Off()
+    // 2. دریافت‌کننده؛ کاری را که باید انجام شود انجام می‌دهد
+    public class Light
     {
-        Console.WriteLine("Light is off");
-    }
-}
+        public void TurnOn()
+        {
+            Console.WriteLine("Light is ON");
+        }
 
-class LightOnCommand : ICommand
-{
-    private readonly Light _light;
-
-    public LightOnCommand(Light light)
-    {
-        _light = light;
-    }
-
-    public void Execute()
-    {
-        _light.On();
-    }
-}
-
-class LightOffCommand : ICommand
-{
-    private readonly Light _light;
-
-    public LightOffCommand(Light light)
-    {
-        _light = light;
+        public void TurnOff()
+        {
+            Console.WriteLine("Light is OFF");
+        }
     }
 
-    public void Execute()
+    // 3. فرمان روشن‌کردن چراغ
+    public class TurnOnCommand : ICommand
     {
-        _light.Off();
-    }
-}
+        private readonly Light _light;
 
-// Stereo and its command classes
-class Stereo
-{
-    public void On()
-    {
-        Console.WriteLine("Stereo is on");
-    }
+        public TurnOnCommand(Light light)
+        {
+            _light = light;
+        }
 
-    public void Off()
-    {
-        Console.WriteLine("Stereo is off");
+        public void Execute()
+        {
+            _light.TurnOn();
+        }
     }
 
-    public void SetCD()
+    // 4. فرمان خاموش‌کردن چراغ
+    public class TurnOffCommand : ICommand
     {
-        Console.WriteLine("Stereo is set for CD input");
+        private readonly Light _light;
+
+        public TurnOffCommand(Light light)
+        {
+            _light = light;
+        }
+
+        public void Execute()
+        {
+            _light.TurnOff();
+        }
     }
 
-    public void SetVolume(int volume)
+    // 5. اجراکننده فرمان
+    public class RemoteControl
     {
-        Console.WriteLine($"Stereo volume set to {volume}");
-    }
-}
+        private ICommand _command;
 
-class StereoOffCommand : ICommand
-{
-    private readonly Stereo _stereo;
+        public void SetCommand(ICommand command)
+        {
+            _command = command;
+        }
 
-    public StereoOffCommand(Stereo stereo)
-    {
-        _stereo = stereo;
-    }
-
-    public void Execute()
-    {
-        _stereo.Off();
-    }
-}
-
-class StereoOnWithCDCommand : ICommand
-{
-    private readonly Stereo _stereo;
-
-    public StereoOnWithCDCommand(Stereo stereo)
-    {
-        _stereo = stereo;
+        public void PressButton()
+        {
+            _command.Execute();
+        }
     }
 
-    public void Execute()
+    // 6. اجرای برنامه
+    internal class Program
     {
-        _stereo.On();
-        _stereo.SetCD();
-        _stereo.SetVolume(11);
-    }
-}
+        static void Main(string[] args)
+        {
+            Light light = new Light();
+            RemoteControl remote = new RemoteControl();
 
-// Simple remote control with one button
-class SimpleRemoteControl
-{
-    private ICommand _slot; // only one button
+            // تنظیم فرمان روشن‌کردن
+            remote.SetCommand(new TurnOnCommand(light));
+            remote.PressButton();
 
-    public SimpleRemoteControl()
-    {
-    }
+            // تغییر فرمان به خاموش‌کردن
+            remote.SetCommand(new TurnOffCommand(light));
+            remote.PressButton();
 
-    public void SetCommand(ICommand command)
-    {
-        // set the command the remote will execute
-        _slot = command;
-    }
-
-    public void ButtonWasPressed()
-    {
-        _slot.Execute();
-    }
-}
-
-// Driver class
-class RemoteControlTest
-{
-    static void Main(string[] args)
-    {
-        SimpleRemoteControl remote = new SimpleRemoteControl();
-        Light light = new Light();
-        Stereo stereo = new Stereo();
-
-        // We can change command dynamically
-        remote.SetCommand(new LightOnCommand(light));
-        remote.ButtonWasPressed();
-        remote.SetCommand(new StereoOnWithCDCommand(stereo));
-        remote.ButtonWasPressed();
-        remote.SetCommand(new StereoOffCommand(stereo));
-        remote.ButtonWasPressed();
+            Console.ReadKey();
+        }
     }
 }

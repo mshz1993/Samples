@@ -1,86 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 
-// Memento
-public class EditorMemento
+namespace MementoPatternExample
 {
-    public string Content { get; }
-
-    public EditorMemento(string content)
+    // 1. ذخیره وضعیت قبلی
+    public class EditorMemento
     {
-        Content = content;
-    }
-}
+        public string Text { get; }
 
-// Originator
-public class TextEditor
-{
-    private string content;
-
-    public string Content
-    {
-        get => content;
-        set
+        public EditorMemento(string text)
         {
-            content = value;
-            Console.WriteLine($"Current Content: {content}");
+            Text = text;
         }
     }
 
-    public EditorMemento Save()
+    // 2. شیئی که وضعیتش ذخیره و بازیابی می‌شود
+    public class TextEditor
     {
-        return new EditorMemento(content);
+        public string Text { get; set; } = string.Empty;
+
+        // ایجاد نسخه‌ای از وضعیت فعلی
+        public EditorMemento Save()
+        {
+            return new EditorMemento(Text);
+        }
+
+        // بازیابی وضعیت ذخیره‌شده
+        public void Restore(EditorMemento memento)
+        {
+            Text = memento.Text;
+        }
     }
 
-    public void Restore(EditorMemento memento)
+    // 3. نگهداری نسخه ذخیره‌شده
+    public class History
     {
-        content = memento.Content;
-        Console.WriteLine($"Restored Content: {content}");
+        private EditorMemento _memento;
+
+        public void Save(EditorMemento memento)
+        {
+            _memento = memento;
+        }
+
+        public EditorMemento GetSavedState()
+        {
+            return _memento;
+        }
     }
-}
 
-// Caretaker
-public class History
-{
-    private List<EditorMemento> states = new List<EditorMemento>();
-
-    public void SaveState(EditorMemento memento)
+    // 4. اجرای برنامه
+    internal class Program
     {
-        states.Add(memento);
-    }
+        static void Main(string[] args)
+        {
+            TextEditor editor = new TextEditor();
+            History history = new History();
 
-    public EditorMemento GetLastState()
-    {
-        if (states.Count == 0)
-            return null;
+            editor.Text = "Hello";
+            history.Save(editor.Save());
 
-        var lastState = states[^1];
-        states.RemoveAt(states.Count - 1);
-        return lastState;
-    }
-}
+            editor.Text = "Hello World";
+            Console.WriteLine("Current: " + editor.Text);
 
-// Client Code
-class Program
-{
-    static void Main()
-    {
-        TextEditor editor = new TextEditor();
-        History history = new History();
+            // بازگرداندن متن به وضعیت ذخیره‌شده
+            editor.Restore(history.GetSavedState());
 
-        // Initial content
-        editor.Content = "Hello, ";
+            Console.WriteLine("After Undo: " + editor.Text);
 
-        // Save state
-        history.SaveState(editor.Save());
-
-        // Make changes
-        editor.Content += "world!";
-
-        // Save state
-        history.SaveState(editor.Save());
-
-        // Undo
-        editor.Restore(history.GetLastState());
+            Console.ReadKey();
+        }
     }
 }

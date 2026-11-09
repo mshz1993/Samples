@@ -1,71 +1,85 @@
-﻿using System;
+﻿
+using System;
 
-// Strategy Interface
-public interface IPaymentStrategy
+namespace StrategyPatternExample
 {
-    void ProcessPayment(float amount);
-}
-
-// Concrete Strategies
-public class PayPalPayment : IPaymentStrategy
-{
-    public void ProcessPayment(float amount)
+    // 1. قرارداد مشترک الگوریتم‌های ارسال
+    public interface IShippingStrategy
     {
-        Console.WriteLine($"Processing PayPal payment of {amount} dollars.");
-        // Additional PayPal-specific logic
-    }
-}
-
-public class CreditCardPayment : IPaymentStrategy
-{
-    public void ProcessPayment(float amount)
-    {
-        Console.WriteLine($"Processing Credit Card payment of {amount} dollars.");
-        // Additional Credit Card-specific logic
-    }
-}
-
-public class BitcoinPayment : IPaymentStrategy
-{
-    public void ProcessPayment(float amount)
-    {
-        Console.WriteLine($"Processing Bitcoin payment of {amount} dollars.");
-        // Additional Bitcoin-specific logic
-    }
-}
-
-// Context
-public class PaymentContext
-{
-    private IPaymentStrategy paymentStrategy;
-
-    public PaymentContext(IPaymentStrategy strategy)
-    {
-        this.paymentStrategy = strategy;
+        decimal CalculateCost(decimal orderAmount);
     }
 
-    public void SetPaymentStrategy(IPaymentStrategy strategy)
+    // 2. ارسال معمولی
+    public class StandardShipping : IShippingStrategy
     {
-        this.paymentStrategy = strategy;
+        public decimal CalculateCost(decimal orderAmount)
+        {
+            return 50;
+        }
     }
 
-    public void ProcessPayment(float amount)
+    // 3. ارسال سریع
+    public class ExpressShipping : IShippingStrategy
     {
-        paymentStrategy.ProcessPayment(amount);
+        public decimal CalculateCost(decimal orderAmount)
+        {
+            return 100;
+        }
     }
-}
 
-// Client Code
-class Program
-{
-    static void Main()
+    // 4. ارسال رایگان برای سفارش‌های واجد شرایط
+    public class FreeShipping : IShippingStrategy
     {
-        PaymentContext paymentContext = new PaymentContext(new PayPalPayment());
+        public decimal CalculateCost(decimal orderAmount)
+        {
+            return 0;
+        }
+    }
 
-        paymentContext.ProcessPayment(100.0f);
+    // 5. کلاس اصلی سفارش
+    public class Order
+    {
+        private IShippingStrategy _shippingStrategy;
 
-        // Switching the payment method at runtime
-        paymentContext.SetPaymentStrategy(new BitcoinPayment());
-        paymentContext.ProcessPayment(50.0f);
+        public Order(IShippingStrategy shippingStrategy)
+        {
+            _shippingStrategy = shippingStrategy;
+        }
+
+        // امکان تغییر الگوریتم در زمان اجرا
+        public void SetShippingStrategy(
+            IShippingStrategy shippingStrategy)
+        {
+            _shippingStrategy = shippingStrategy;
+        }
+
+        public decimal CalculateShipping(decimal orderAmount)
+        {
+            return _shippingStrategy.CalculateCost(orderAmount);
+        }
+    }
+
+    // 6. اجرای برنامه
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Order order = new Order(new StandardShipping());
+
+            Console.WriteLine(
+                $"Standard: {order.CalculateShipping(500)}");
+
+            order.SetShippingStrategy(new ExpressShipping());
+
+            Console.WriteLine(
+                $"Express: {order.CalculateShipping(500)}");
+
+            order.SetShippingStrategy(new FreeShipping());
+
+            Console.WriteLine(
+                $"Free: {order.CalculateShipping(500)}");
+
+            Console.ReadKey();
+        }
     }
 }

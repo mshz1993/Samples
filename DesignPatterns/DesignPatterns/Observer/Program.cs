@@ -1,75 +1,97 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 
-// Subject (WeatherStation)
-public class WeatherStation
+namespace ObserverPatternExample
 {
-    private List<IObserver> observers = new List<IObserver>();
-    private string currentWeather;
-
-    public void AddObserver(IObserver observer)
+    // 1. قرارداد مشترک ناظرها
+    public interface IObserver
     {
-        observers.Add(observer);
+        void Update(string message);
     }
 
-    public void RemoveObserver(IObserver observer)
+    // 2. ناظر اول
+    public class Customer : IObserver
     {
-        observers.Remove(observer);
-    }
+        public string Name { get; }
 
-    public void NotifyObservers()
-    {
-        foreach (var observer in observers)
+        public Customer(string name)
         {
-            observer.Update(currentWeather);
+            Name = name;
+        }
+
+        public void Update(string message)
+        {
+            Console.WriteLine($"{Name} received: {message}");
         }
     }
 
-    public void SetWeather(string newWeather)
+    // 3. موضوعی که تغییرات را اعلام می‌کند
+    public class Product
     {
-        currentWeather = newWeather;
-        NotifyObservers();
+        private readonly List<IObserver> _observers =
+            new List<IObserver>();
+
+        public string Name { get; }
+
+        private decimal _price;
+
+        public Product(string name, decimal price)
+        {
+            Name = name;
+            _price = price;
+        }
+
+        public void Subscribe(IObserver observer)
+        {
+            _observers.Add(observer);
+        }
+
+        public void Unsubscribe(IObserver observer)
+        {
+            _observers.Remove(observer);
+        }
+
+        public void ChangePrice(decimal newPrice)
+        {
+            _price = newPrice;
+
+            NotifyObservers(
+                $"Price of {Name} changed to {_price}");
+        }
+
+        private void NotifyObservers(string message)
+        {
+            foreach (IObserver observer in _observers)
+            {
+                observer.Update(message);
+            }
+        }
     }
-}
 
-// Observer Interface
-public interface IObserver
-{
-    void Update(string weather);
-}
-
-// Concrete Observer (DisplayDevice)
-public class DisplayDevice : IObserver
-{
-    private string displayLocation;
-
-    public DisplayDevice(string location)
+    // 4. اجرای برنامه
+    internal class Program
     {
-        displayLocation = location;
-    }
+        static void Main(string[] args)
+        {
+            Product product = new Product("Laptop", 1000);
 
-    public void Update(string weather)
-    {
-        Console.WriteLine($"Display at {displayLocation} updated. Current weather: {weather}");
-    }
-}
+            Customer ali = new Customer("Ali");
+            Customer sara = new Customer("Sara");
 
-// Client Code
-class Program
-{
-    static void Main()
-    {
-        WeatherStation weatherStation = new WeatherStation();
+            // ثبت مشترک‌ها
+            product.Subscribe(ali);
+            product.Subscribe(sara);
 
-        DisplayDevice mobileApp = new DisplayDevice("Mobile App");
-        DisplayDevice website = new DisplayDevice("Website");
-        DisplayDevice dedicatedDevice = new DisplayDevice("Dedicated Device");
+            // تغییر قیمت و اطلاع‌رسانی خودکار
+            product.ChangePrice(900);
 
-        weatherStation.AddObserver(mobileApp);
-        weatherStation.AddObserver(website);
-        weatherStation.AddObserver(dedicatedDevice);
+            // لغو اشتراک علی
+            product.Unsubscribe(ali);
 
-        weatherStation.SetWeather("Sunny"); // All displays should update
-        weatherStation.SetWeather("Rainy"); // All displays should update
+            product.ChangePrice(800);
+
+            Console.ReadKey();
+        }
     }
 }

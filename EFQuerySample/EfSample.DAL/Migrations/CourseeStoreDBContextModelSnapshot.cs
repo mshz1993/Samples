@@ -18,6 +18,9 @@ namespace EfSample.DAL.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -122,6 +125,26 @@ namespace EfSample.DAL.Migrations
                     b.ToTable("CourseTeachers");
                 });
 
+            modelBuilder.Entity("EFSample.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customers");
+                });
+
             modelBuilder.Entity("EFSample.Discount", b =>
                 {
                     b.Property<int>("DiscountId")
@@ -146,6 +169,30 @@ namespace EfSample.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("Discounts");
+                });
+
+            modelBuilder.Entity("EFSample.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("EFSample.Tag", b =>
@@ -242,6 +289,17 @@ namespace EfSample.DAL.Migrations
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("EFSample.Order", b =>
+                {
+                    b.HasOne("EFSample.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
             modelBuilder.Entity("EFSample.Course", b =>
                 {
                     b.Navigation("Comments");
@@ -250,6 +308,11 @@ namespace EfSample.DAL.Migrations
 
                     b.Navigation("Discount")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("EFSample.Customer", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("EFSample.Teacher", b =>

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "K+bs8xgB23E=",
+  "dgSpecHash": "jUtFPXBYedI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Source\\EFQuerySample\\EFSample\\EFSample.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Mehran\\Desktop\\Samples\\EFQuerySample\\EFSample\\EFSample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mehran\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.306\\microsoft.net.sdk.compilers.toolset.9.0.306.nupkg.sha512"
+  ],
   "logs": []
 }

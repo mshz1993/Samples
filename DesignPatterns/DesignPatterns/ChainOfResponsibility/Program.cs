@@ -1,128 +1,97 @@
-﻿// The Handler interface declares a method for building the chain of
-// handlers. It also declares a method for executing a request.
-public interface IHandler
+﻿
+using System;
+
+namespace ChainOfResponsibilityExample
 {
-    IHandler SetNext(IHandler handler);
-
-    object Handle(object request);
-}
-
-// The default chaining behavior can be implemented inside a base handler
-// class.
-abstract class AbstractHandler : IHandler
-{
-    private IHandler _nextHandler;
-
-    public IHandler SetNext(IHandler handler)
+    // کلاس پایه مسئولان تأیید
+    public abstract class ApprovalHandler
     {
-        this._nextHandler = handler;
+        // نگهداری مسئول بعدی در زنجیره
+        protected ApprovalHandler _next;
 
-        // Returning a handler from here will let us link handlers in a
-        // convenient way like this:
-        // monkey.SetNext(squirrel).SetNext(dog);
-        return handler;
+        // اتصال مسئول بعدی
+        public void SetNext(ApprovalHandler next)
+        {
+            _next = next;
+        }
+
+        // هر مسئول باید این متد را پیاده‌سازی کند
+        public abstract void Approve(decimal amount);
     }
 
-    public virtual object Handle(object request)
+    // مدیر: تأیید مبالغ تا 1000
+    public class Manager : ApprovalHandler
     {
-        if (this._nextHandler != null)
+        public override void Approve(decimal amount)
         {
-            return this._nextHandler.Handle(request);
-        }
-        else
-        {
-            return null;
-        }
-    }
-}
-
-class MonkeyHandler : AbstractHandler
-{
-    public override object Handle(object request)
-    {
-        if ((request as string) == "Banana")
-        {
-            return $"Monkey: I'll eat the {request.ToString()}.\n";
-        }
-        else
-        {
-            return base.Handle(request);
-        }
-    }
-}
-
-class SquirrelHandler : AbstractHandler
-{
-    public override object Handle(object request)
-    {
-        if (request.ToString() == "Nut")
-        {
-            return $"Squirrel: I'll eat the {request.ToString()}.\n";
-        }
-        else
-        {
-            return base.Handle(request);
-        }
-    }
-}
-
-class DogHandler : AbstractHandler
-{
-    public override object Handle(object request)
-    {
-        if (request.ToString() == "MeatBall")
-        {
-            return $"Dog: I'll eat the {request.ToString()}.\n";
-        }
-        else
-        {
-            return base.Handle(request);
-        }
-    }
-}
-
-class Client
-{
-    // The client code is usually suited to work with a single handler. In
-    // most cases, it is not even aware that the handler is part of a chain.
-    public static void ClientCode(AbstractHandler handler)
-    {
-        foreach (var food in new List<string> { "Nut", "Banana", "Cup of coffee" })
-        {
-            Console.WriteLine($"Client: Who wants a {food}?");
-
-            var result = handler.Handle(food);
-
-            if (result != null)
+            if (amount <= 1000)
             {
-                Console.Write($"   {result}");
+                Console.WriteLine(
+                    $"Manager approved: {amount}");
+            }
+            else if (_next != null)
+            {
+                // انتقال درخواست به مسئول بعدی
+                _next.Approve(amount);
             }
             else
             {
-                Console.WriteLine($"   {food} was left untouched.");
+                Console.WriteLine("No handler available");
             }
         }
     }
-}
 
-class Program
-{
-    static void Main(string[] args)
+    // مدیر مالی: تأیید مبالغ تا 10000
+    public class FinanceManager : ApprovalHandler
     {
-        // The other part of the client code constructs the actual chain.
-        var monkey = new MonkeyHandler();
-        var squirrel = new SquirrelHandler();
-        var dog = new DogHandler();
+        public override void Approve(decimal amount)
+        {
+            if (amount <= 10000)
+            {
+                Console.WriteLine(
+                    $"Finance Manager approved: {amount}");
+            }
+            else if (_next != null)
+            {
+                // انتقال درخواست به مسئول بعدی
+                _next.Approve(amount);
+            }
+            else
+            {
+                Console.WriteLine("No handler available");
+            }
+        }
+    }
 
-        monkey.SetNext(squirrel).SetNext(dog);
+    // مدیرعامل: تأیید مبالغ بالاتر
+    public class Director : ApprovalHandler
+    {
+        public override void Approve(decimal amount)
+        {
+            Console.WriteLine(
+                $"Director approved: {amount}");
+        }
+    }
 
-        // The client should be able to send a request to any handler, not
-        // just the first one in the chain.
-        Console.WriteLine("Chain: Monkey > Squirrel > Dog\n");
-        Client.ClientCode(monkey);
-        Console.WriteLine();
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // ایجاد مسئولان
+            ApprovalHandler manager = new Manager();
+            ApprovalHandler financeManager = new FinanceManager();
+            ApprovalHandler director = new Director();
 
-        Console.WriteLine("Subchain: Squirrel > Dog\n");
-        Client.ClientCode(squirrel);
+            // تشکیل زنجیره
+            manager.SetNext(financeManager);
+            financeManager.SetNext(director);
+
+            // ارسال درخواست‌ها از ابتدای زنجیره
+            manager.Approve(500);
+            manager.Approve(5000);
+            manager.Approve(50000);
+
+            Console.ReadKey();
+        }
     }
 }

@@ -4,7 +4,7 @@
     {
         public int CommentId { get; set; }
         public int CourseId { get; set; }
-        public Course Course  { get; set; }
+        public virtual Course Course  { get; set; }
         public string   CommentBy { get; set; }
         public string CommentText { get; set; }
         public int RateCount { get; set; }

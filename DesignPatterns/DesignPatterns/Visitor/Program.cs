@@ -1,83 +1,87 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System;
 
-// Element interface
-interface IDocumentElement
+namespace VisitorPatternExample
 {
-    void Accept(IVisitor visitor);
-}
-
-// Concrete element 1: Paragraph
-class Paragraph : IDocumentElement
-{
-    public void Accept(IVisitor visitor)
+    // 1. قرارداد بازدیدکننده
+    public interface IProductVisitor
     {
-        visitor.VisitParagraph(this);
-    }
-}
-
-// Concrete element 2: Table
-class Table : IDocumentElement
-{
-    public void Accept(IVisitor visitor)
-    {
-        visitor.VisitTable(this);
-    }
-}
-
-// Visitor interface
-interface IVisitor
-{
-    void VisitParagraph(Paragraph paragraph);
-    void VisitTable(Table table);
-}
-
-// Concrete visitor 1: RenderVisitor
-class RenderVisitor : IVisitor
-{
-    public void VisitParagraph(Paragraph paragraph)
-    {
-        Console.WriteLine("Rendering Paragraph");
+        void Visit(Book book);
+        void Visit(Electronic electronic);
     }
 
-    public void VisitTable(Table table)
+    // 2. قرارداد محصولات
+    public interface IProduct
     {
-        Console.WriteLine("Rendering Table");
-    }
-}
-
-// Concrete visitor 2: WordCountVisitor
-class WordCountVisitor : IVisitor
-{
-    public void VisitParagraph(Paragraph paragraph)
-    {
-        Console.WriteLine("Counting words in Paragraph");
+        void Accept(IProductVisitor visitor);
     }
 
-    public void VisitTable(Table table)
+    // 3. محصول اول: کتاب
+    public class Book : IProduct
     {
-        Console.WriteLine("Counting words in Table");
-    }
-}
+        public decimal Price { get; }
 
-// Client code
-class Client
-{
-    static void Main()
-    {
-        List<IDocumentElement> elements = new List<IDocumentElement>
+        public Book(decimal price)
         {
-            new Paragraph(),
-            new Table()
-        };
+            Price = price;
+        }
 
-        IVisitor renderVisitor = new RenderVisitor();
-        IVisitor wordCountVisitor = new WordCountVisitor();
-
-        foreach (var element in elements)
+        public void Accept(IProductVisitor visitor)
         {
-            element.Accept(renderVisitor);
-            element.Accept(wordCountVisitor);
+            visitor.Visit(this);
+        }
+    }
+
+    // 4. محصول دوم: کالای الکترونیکی
+    public class Electronic : IProduct
+    {
+        public decimal Price { get; }
+
+        public Electronic(decimal price)
+        {
+            Price = price;
+        }
+
+        public void Accept(IProductVisitor visitor)
+        {
+            visitor.Visit(this);
+        }
+    }
+
+    // 5. عملیات جدید: محاسبه مالیات
+    public class TaxVisitor : IProductVisitor
+    {
+        public void Visit(Book book)
+        {
+            decimal tax = book.Price * 0.05m;
+
+            Console.WriteLine(
+                $"Book tax: {tax}");
+        }
+
+        public void Visit(Electronic electronic)
+        {
+            decimal tax = electronic.Price * 0.15m;
+
+            Console.WriteLine(
+                $"Electronic tax: {tax}");
+        }
+    }
+
+    // 6. اجرای برنامه
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            IProduct book = new Book(100);
+            IProduct electronic = new Electronic(1000);
+
+            IProductVisitor taxVisitor = new TaxVisitor();
+
+            book.Accept(taxVisitor);
+            electronic.Accept(taxVisitor);
+
+            Console.ReadKey();
         }
     }
 }

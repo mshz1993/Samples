@@ -12,6 +12,8 @@ namespace EfSample.DAL
         public DbSet<Discount> Discounts { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
         #endregion
         #region Constructor
         public CourseeStoreDBContext(DbContextOptions<CourseeStoreDBContext> options) : base(options)

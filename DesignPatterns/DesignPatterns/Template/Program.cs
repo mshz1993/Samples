@@ -1,63 +1,70 @@
-﻿using System;
+﻿
+using System;
 
-abstract class ReportTemplate
+namespace TemplateMethodPatternExample
 {
-    // Template method defining the overall structure
-    public void GenerateReport()
+    // 1. کلاس پایه با الگوریتم کلی
+    public abstract class ReportGenerator
     {
-        Console.WriteLine("Generating Report Header");
-        FetchData();
-        FormatData();
-        DisplayReport();
+        // Template Method: ترتیب مراحل را مشخص می‌کند
+        public void GenerateReport()
+        {
+            GetData();
+            ProcessData();
+            ExportReport();
+        }
+
+        // مراحل مشترک
+        private void GetData()
+        {
+            Console.WriteLine("Getting data...");
+        }
+
+        private void ProcessData()
+        {
+            Console.WriteLine("Processing data...");
+        }
+
+        // مرحله‌ای که فرزندها پیاده‌سازی می‌کنند
+        protected abstract void ExportReport();
     }
 
-    // Abstract methods to be implemented by concrete classes
-    protected abstract void FetchData();
-    protected abstract void FormatData();
-
-    // Common implementation
-    private void DisplayReport()
+    // 2. تولید گزارش PDF
+    public class PdfReportGenerator : ReportGenerator
     {
-        Console.WriteLine("Displaying Report");
-    }
-}
-
-class PdfReport : ReportTemplate
-{
-    // Concrete implementation for PDF report
-    protected override void FetchData()
-    {
-        Console.WriteLine("Fetching Data for PDF Report");
+        protected override void ExportReport()
+        {
+            Console.WriteLine("Exporting report to PDF.");
+        }
     }
 
-    protected override void FormatData()
+    // 3. تولید گزارش Excel
+    public class ExcelReportGenerator : ReportGenerator
     {
-        Console.WriteLine("Formatting Data for PDF Report");
-    }
-}
-
-class ExcelReport : ReportTemplate
-{
-    // Concrete implementation for Excel report
-    protected override void FetchData()
-    {
-        Console.WriteLine("Fetching Data for Excel Report");
+        protected override void ExportReport()
+        {
+            Console.WriteLine("Exporting report to Excel.");
+        }
     }
 
-    protected override void FormatData()
+    // 4. اجرای برنامه
+    internal class Program
     {
-        Console.WriteLine("Formatting Data for Excel Report");
-    }
-}
+        static void Main(string[] args)
+        {
+            ReportGenerator pdfReport =
+                new PdfReportGenerator();
 
-class Program
-{
-    static void Main()
-    {
-        ReportTemplate pdfReport = new PdfReport();
-        pdfReport.GenerateReport();
+            pdfReport.GenerateReport();
 
-        ReportTemplate excelReport = new ExcelReport();
-        excelReport.GenerateReport();
+            Console.WriteLine();
+
+            ReportGenerator excelReport =
+                new ExcelReportGenerator();
+
+            excelReport.GenerateReport();
+
+            Console.ReadKey();
+        }
     }
 }

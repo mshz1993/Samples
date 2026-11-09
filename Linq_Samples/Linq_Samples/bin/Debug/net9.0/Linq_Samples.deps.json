@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Linq_Samples/1.0.0": {
+        "runtime": {
+          "Linq_Samples.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Linq_Samples/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
